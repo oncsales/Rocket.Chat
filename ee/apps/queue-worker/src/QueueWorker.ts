@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import type { Db } from 'mongodb';
 import type { ValidResult, Work } from 'mongo-message-queue';
 import MessageQueue from 'mongo-message-queue';
@@ -6,15 +5,10 @@ import MessageQueue from 'mongo-message-queue';
 import { ServiceClass } from '../../../../apps/meteor/server/sdk/types/ServiceClass';
 import type { IQueueWorkerService } from '../../../../apps/meteor/server/sdk/types/IQueueWorkerService';
 import type { Logger } from '../../../../apps/meteor/server/lib/logger/Logger';
-=======
-import { ServiceClass } from '../../../../apps/meteor/server/sdk/types/ServiceClass';
-import type { IQueueWorkerService } from '../../../../apps/meteor/server/sdk/types/IQueueWorkerService';
->>>>>>> feat/chat-transcript
 
 export class QueueWorker extends ServiceClass implements IQueueWorkerService {
 	protected name = 'queue-worker';
 
-<<<<<<< HEAD
 	protected retryCount = 5;
 
 	protected queue: MessageQueue;
@@ -90,17 +84,4 @@ export class QueueWorker extends ServiceClass implements IQueueWorkerService {
 		this.logger.info(`Queueing work for ${to}`);
 		await this.queue.enqueue<typeof data>('work', { to, ...data });
 	}
-=======
-	constructor() {
-		super();
-
-		// your stuff
-	}
-
-	getConfig(): unknown {
-		return null;
-	}
-
-	// more stuff
->>>>>>> feat/chat-transcript
 }
